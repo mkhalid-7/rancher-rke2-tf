@@ -1,7 +1,7 @@
 
 # connect to rancher
-rancher_url = "https://mkhalid.awssolutionsprovider.com/"
-bearer_token = "token-6vnc9:rnhfzvhf2hmgz6h54mjw47zd74vkc4qsxgnmv25gwxlqlwwlp69rtr"
+rancher_url = ""
+bearer_token = ""
 
 # aws machine config
 region     = "us-east-1"
