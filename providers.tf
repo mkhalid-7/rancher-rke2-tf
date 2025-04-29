@@ -10,6 +10,7 @@ terraform {
 provider "rancher2" {
   api_url = var.rancher_url
   token_key = var.bearer_token
-  insecure = false
+  insecure = true
+  # insecure = false
 }
 

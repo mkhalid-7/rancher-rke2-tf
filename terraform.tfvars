@@ -1,7 +1,8 @@
 
 # connect to rancher
-rancher_url = ""
+rancher_url = "https://35.153.142.164.sslip.io"
 bearer_token = ""
+
 
 # aws machine config
 region     = "us-east-1"
@@ -20,16 +21,18 @@ zone = "c"
 
 # cluster config #
 cloud_credential_name = "mkhalid-credentials"
-cluster_name = "rke2-tf-test"
-kubernetes_version = "v1.32.3+rke2r1"
+# cloud_credential_name = "mk"
+
+cluster_name = "rke2-tf"
+
+kubernetes_version = "v1.26.15+rke2r1"
 # kubernetes_version = "v1.28.15+rke2r1"
+# kubernetes_version = "v1.32.3+rke2r1"
 
 
 # rke2 pool config
-# 1
-pool_1_name = "pool1"
-pool_1_machines = 3
-# 2
-# pool_2_name = "pool2"
-# pool_2_machines = 1
+# pool1
+pool_1_name = "master"
+pool_1_machines = 1
+
 
