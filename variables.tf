@@ -14,12 +14,25 @@ variable "ssh_user" {}
 variable "volume_type" {}
 variable "kubernetes_version" {}
 variable "cloud_credential_name" {}
-variable "pool_1_name" {}
-variable "pool_1_machines" {}
 variable "cluster_name" {}
+variable "cni_name" {}
 
-# variable "pool_2_name" {}
-# variable "pool_2_machines" {}
+variable "node_groups" {
+  type = map(object({
+    control_plane_role    = bool
+    etcd_role             = bool
+    worker_role           = bool
+    quantity              = number
+    machine_labels        = map(string)
+    machine_taints        = list(object({
+      key    = string
+      value  = string
+      effect = string
+    }))
+    machine_annotations   = map(string)
+  }))
+}
+
 
 
 

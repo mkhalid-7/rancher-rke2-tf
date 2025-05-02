@@ -1,7 +1,7 @@
 
 # connect to rancher
-rancher_url = "https://35.153.142.164.sslip.io"
-bearer_token = ""
+rancher_url = "https://54.235.32.86.sslip.io"
+bearer_token = "token-826mp:lgxqg8r9v7zwqmzkrckxmb6q7vp248thxdgctqmtmkzbxq5p44f2rw"
 
 
 # aws machine config
@@ -19,20 +19,42 @@ vpc_id = "vpc-9dd3e7e7"
 zone = "c"
 
 
-# cluster config #
+# cluster config 
 cloud_credential_name = "mkhalid-credentials"
-# cloud_credential_name = "mk"
-
 cluster_name = "rke2-tf"
-
+cni_name  = "calico"
 kubernetes_version = "v1.26.15+rke2r1"
 # kubernetes_version = "v1.28.15+rke2r1"
 # kubernetes_version = "v1.32.3+rke2r1"
 
 
 # rke2 pool config
-# pool1
-pool_1_name = "master"
-pool_1_machines = 1
-
+node_groups = {
+  master-pool = {
+    control_plane_role  = true
+    etcd_role           = true
+    worker_role         = true
+    quantity            = 1
+    machine_labels      = {}
+    machine_taints      = []
+    machine_annotations = {}
+  }
+  worker-pool = {
+    control_plane_role  = false
+    etcd_role           = false
+    worker_role         = true
+    quantity            = 1
+    machine_labels      = {}
+    machine_taints = [
+      # {
+      #   key    = "dedicated"
+      #   value  = "worker"
+      #   effect = "NoSchedule"
+      # }
+    ]
+    machine_annotations = {
+      # "cluster.provisioning.cattle.io/autoscaler-max-size" = "5"
+    }
+  }
+}
 
