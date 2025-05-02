@@ -68,38 +68,6 @@ resource "rancher2_cluster_v2" "rke2_cluster" {
 }
 
 
-# # Create a cluster           
-# resource "rancher2_cluster_v2" "rke2_cluster" {
-#   name = var.cluster_name
-#   kubernetes_version = var.kubernetes_version
-#   enable_network_policy = false
-#   cloud_credential_secret_name =  data.rancher2_cloud_credential.aws_credentials.id
-
-#   rke_config {
-#     # Nodes in this pool have control plane role and etcd roles
-#     machine_pools {
-#       name = var.pool_1_name
-#       cloud_credential_secret_name = data.rancher2_cloud_credential.aws_credentials.id
-#       quantity = var.pool_1_machines
-#       control_plane_role = true
-#       etcd_role = true
-#       worker_role = true
-#       drain_before_delete = true
-#       machine_config {
-#         kind = rancher2_machine_config_v2.aws-machine-config.kind
-#         name = rancher2_machine_config_v2.aws-machine-config.name
-#       }
-#     }
-#     machine_global_config = yamlencode({
-#       cni = "calico"
-#       disable-kube-proxy = false
-#       etcd-expose-metrics = false
-#     })
-#   }
-#   depends_on = [ rancher2_machine_config_v2.aws-machine-config ]
-# }
-
-
 
 
 
