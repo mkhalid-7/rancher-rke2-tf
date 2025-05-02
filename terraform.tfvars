@@ -1,7 +1,7 @@
 
 # connect to rancher
-rancher_url = "https://54.235.32.86.sslip.io"
-bearer_token = "token-826mp:lgxqg8r9v7zwqmzkrckxmb6q7vp248thxdgctqmtmkzbxq5p44f2rw"
+rancher_url = ""
+bearer_token = ""
 
 
 # aws machine config
